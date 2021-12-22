@@ -11,7 +11,7 @@ function Adminclinics() {
   const del = useRef(null);
 
   useEffect(() => {
-    fetch("http://192.168.1.9:4000/tokenchecker", {
+    fetch("https://mokhimtihon.herokuapp.com/tokenchecker", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(checkToken),
@@ -32,7 +32,7 @@ function Adminclinics() {
   }, []);
 
   useEffect(() => {
-    fetch("http://192.168.1.9:4000/")
+    fetch("https://mokhimtihon.herokuapp.com/")
       .then((data) => data.json())
       .then((m) => setClinics(m));
   }, []);
@@ -46,7 +46,10 @@ function Adminclinics() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(obj),
     };
-    fetch("http://192.168.1.9:4000/superadmin/delete/clinics", requestOptions)
+    fetch(
+      "https://mokhimtihon.herokuapp.com/superadmin/delete/clinics",
+      requestOptions
+    )
       .then((data) => data.json())
       .then((m) => {
         if (m == "deleted") {

@@ -9,13 +9,13 @@ function Orders() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch("http://192.168.1.9:4000/superadmin/orders")
+    fetch("https://mokhimtihon.herokuapp.com/superadmin/orders")
       .then((data) => data.json())
       .then((m) => setOrders(m));
   }, []);
 
   useEffect(() => {
-    fetch("http://192.168.1.9:4000/tokenchecker", {
+    fetch("https://mokhimtihon.herokuapp.com/tokenchecker", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(checkToken),
@@ -44,7 +44,10 @@ function Orders() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(objects),
     };
-    fetch("http://192.168.1.9:4000/superadmin/order/delete", requestOptions)
+    fetch(
+      "https://mokhimtihon.herokuapp.com/superadmin/order/delete",
+      requestOptions
+    )
       .then((data) => data.json())
       .then((m) => {
         if (m == "deleted") {

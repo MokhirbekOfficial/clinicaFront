@@ -19,7 +19,7 @@ function Login() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(objects),
     };
-    fetch("http://192.168.1.9:4000/login", requestOptions)
+    fetch("https://mokhimtihon.herokuapp.com/login", requestOptions)
       .then((data) => data.json())
       .then((m) => {
         if (m !== "false") {

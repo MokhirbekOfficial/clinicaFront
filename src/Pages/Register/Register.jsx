@@ -24,7 +24,7 @@ function Register() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(objects),
     };
-    fetch("http://192.168.1.9:4000/register", requestOptions)
+    fetch("https://mokhimtihon.herokuapp.com/register", requestOptions)
       .then((data) => data.json())
       .then((m) => {
         if (m !== "false") {

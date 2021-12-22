@@ -25,18 +25,18 @@ function Superadmin() {
   const clinicError = useRef(null);
 
   useEffect(() => {
-    fetch("http://192.168.1.9:4000/superadmin/users")
+    fetch("https://mokhimtihon.herokuapp.com/superadmin/users")
       .then((data) => data.json())
       .then((m) => setUsers(m));
   }, []);
 
   useEffect(() => {
-    fetch("http://192.168.1.9:4000/admins")
+    fetch("https://mokhimtihon.herokuapp.com/admins")
       .then((data) => data.json())
       .then((m) => setAdmins2(m));
   }, []);
   useEffect(() => {
-    fetch("http://192.168.1.9:4000/tokenchecker", {
+    fetch("https://mokhimtihon.herokuapp.com/tokenchecker", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(checkToken),
@@ -56,7 +56,10 @@ function Superadmin() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(objects),
     };
-    fetch("http://192.168.1.9:4000/superadmin/user/delete", requestOptions)
+    fetch(
+      "https://mokhimtihon.herokuapp.com/superadmin/user/delete",
+      requestOptions
+    )
       .then((data) => data.json())
       .then((m) => {
         if (m == "deleted") {
@@ -107,7 +110,7 @@ function Superadmin() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(objAdmin),
     };
-    fetch("http://192.168.1.9:4000/register", requestOptions)
+    fetch("https://mokhimtihon.herokuapp.com/register", requestOptions)
       .then((data) => data.json())
       .then((m) => {
         if (m !== false) {
@@ -145,7 +148,10 @@ function Superadmin() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(obj),
     };
-    fetch("http://192.168.1.9:4000/superadmin/addclinics", requestOptions)
+    fetch(
+      "https://mokhimtihon.herokuapp.com/superadmin/addclinics",
+      requestOptions
+    )
       .then((data) => data.json())
       .then((m) => {
         if (m == "ok") {

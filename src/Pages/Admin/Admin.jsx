@@ -24,7 +24,7 @@ function Admin() {
     let obj = {
       token: token,
     };
-    fetch("http://192.168.1.9:4000/admin/orders", {
+    fetch("https://mokhimtihon.herokuapp.com/admin/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(obj),
@@ -36,7 +36,7 @@ function Admin() {
   }, []);
 
   useEffect(() => {
-    fetch("http://192.168.1.9:4000/tokenchecker", {
+    fetch("https://mokhimtihon.herokuapp.com/tokenchecker", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(checkToken),
@@ -51,7 +51,7 @@ function Admin() {
     let obj = {
       token: token,
     };
-    fetch("http://192.168.1.9:4000/getadmin/clinics", {
+    fetch("https://mokhimtihon.herokuapp.com/getadmin/clinics", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(obj),
@@ -81,7 +81,10 @@ function Admin() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(objects),
     };
-    fetch("http://192.168.1.9:4000/superadmin/order/delete", requestOptions)
+    fetch(
+      "https://mokhimtihon.herokuapp.com/superadmin/order/delete",
+      requestOptions
+    )
       .then((data) => data.json())
       .then((m) => {
         if (m == "deleted") {
@@ -120,7 +123,7 @@ function Admin() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(obj),
     };
-    fetch("http://192.168.1.9:4000/add/services", requestOptions)
+    fetch("https://mokhimtihon.herokuapp.com/add/services", requestOptions)
       .then((data) => data.json())
       .then((m) => {
         if (m == "ok") {
@@ -143,7 +146,7 @@ function Admin() {
     let obj = {
       token: token,
     };
-    fetch("http://192.168.1.9:4000/admin/services", {
+    fetch("https://mokhimtihon.herokuapp.com/admin/services", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(obj),
@@ -164,7 +167,7 @@ function Admin() {
     let obj = {
       service_id: serviceId,
     };
-    fetch("http://192.168.1.9:4000/admin/delete/service", {
+    fetch("https://mokhimtihon.herokuapp.com/admin/delete/service", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(obj),
